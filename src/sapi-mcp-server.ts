@@ -34,8 +34,6 @@ export class ScraperAPIMCPServer {
 
   registerTools() {
     this.registerScrapeTool();
-    this.registerGetAlertsTool();
-    this.registerGetForecastTool();
   }
 
   registerResources() {
@@ -44,13 +42,5 @@ export class ScraperAPIMCPServer {
 
   registerScrapeTool() {
     registerScrapeTool({ server: this.server, sapiClient: this.sapiClient });
-  }
-
-  registerGetAlertsTool() {
-    registerGetAlertsTool({ server: this.server });
-  }
-
-  registerGetForecastTool() {
-    registerGetForecastTool({ server: this.server });
   }
 }
