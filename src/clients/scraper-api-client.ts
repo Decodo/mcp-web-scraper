@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { NodeHtmlMarkdown } from 'node-html-markdown';
 import { ScraperApiResponseData } from './types';
-import { ScrapingMCPParams } from 'types';
+import { ScraperAPIParams, ScrapingMCPParams } from 'types';
 
 export class ScraperApiClient {
   auth: string;
@@ -10,27 +10,27 @@ export class ScraperApiClient {
     this.auth = auth;
   }
 
-  transformScrapingParams = ({ scrapingParams }: { scrapingParams: ScrapingMCPParams }) => {
+  transformScrapingParams = ({
+    scrapingParams,
+  }: {
+    scrapingParams: ScrapingMCPParams;
+  }): ScraperAPIParams => {
     const { jsRender, ...rest } = scrapingParams;
     const transformed = { ...(jsRender && { headless: 'html' }), ...rest };
 
     return transformed;
   };
 
-  transformResponse = ({ data }: { data: ScraperApiResponseData }) => {
-    const content = data.results[0].content;
+  transformResponse = <T>({ res }: { res: AxiosResponse<ScraperApiResponseData<T>> }) => {
+    const content = res.data.results[0].content;
 
-    if (typeof content !== 'string') {
-      return JSON.stringify(content);
-    }
-
-    return content;
+    return { ...res, data: content };
   };
 
-  scrape = async ({ scrapingParams }: { scrapingParams: ScrapingMCPParams }) => {
+  scrape = async <T = string>({ scrapingParams }: { scrapingParams: ScrapingMCPParams }) => {
     const transformedParams = this.transformScrapingParams({ scrapingParams });
 
-    const { data: rawData } = await axios.request<ScraperApiResponseData>({
+    const res = await axios.request<ScraperApiResponseData<T>>({
       url: 'https://scraper-api.decodo.com/v2/scrape',
       method: 'POST',
       headers: { authorization: `Basic ${this.auth}` },
@@ -39,10 +39,8 @@ export class ScraperApiClient {
       },
     });
 
-    const html = this.transformResponse({ data: rawData });
+    const response = this.transformResponse({ res });
 
-    const markdown = NodeHtmlMarkdown.translate(html, {});
-
-    return { content: markdown };
+    return response;
   };
 }

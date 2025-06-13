@@ -1,6 +1,6 @@
-export type ScraperApiResponseData = {
+export type ScraperApiResponseData<T = string> = {
   results: {
-    content: string;
+    content: T;
     headers: Record<string, string>;
     cookies: {}[];
     status_code: number;
