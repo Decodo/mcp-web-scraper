@@ -13,6 +13,9 @@ Prerequisites:
 - `node` >= `18.0`
 - A Decodo Scraper API Web Advanced user - trial available on
   [dashboard](https://dashboard.decodo.com/).
+- An MCP client - can currently choose between:
+  - [Claude Desktop](https://claude.ai/download)
+  - [Cursor](https://www.cursor.com/)
 
 1. Once you have a Web Advanced plan activated, take a note of your generated username and password:
 
@@ -72,19 +75,20 @@ for how to install.
 
 The server exposes the following tools:
 
-| Tool     | Description                                                       |
-| -------- | ----------------------------------------------------------------- |
-| `scrape` | Scrapes any target URL. Infers the following para parameters:<br> |
+| Tool                   | Description                                                          | Example prompt                                                  |
+| ---------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------- |
+| `scrape`               | Scrapes any target URL, expects a URL to be given via prompt.        | Scrape peacock.com from a US ip address and tell me the pricing |
+| `google_search_parsed` | Scrapes Google Search for a given query, and returns parsed results. | Scrape google search for shoes and tell me the top position     |
 
 ## Parameters
 
-The following parameters are inferred from queries:
+The following parameters are inferred from user prompts:
 
-| Parameter  | Description                               |
-| ---------- | ----------------------------------------- |
-| `jsRender` | Renders target URL in a headless browser. |
-| `geo`      | Sets geolocation of request.              |
-| `locale`   | Sets locale of request.                   |
+| Parameter  | Description                                        |
+| ---------- | -------------------------------------------------- |
+| `jsRender` | Renders target URL in a headless browser.          |
+| `geo`      | Sets the country from which request will originate |
+| `locale`   | Sets the locale of the request.                    |
 
 ## Examples
 

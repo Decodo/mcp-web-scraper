@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc && chmod 755 build/index.js",
     "dev": "pnpm run build && mcp-inspector",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,11 @@
   ],
   "devDependencies": {
     "@modelcontextprotocol/inspector": "^0.14.0",
+    "@types/jest": "^30.0.0",
     "@types/node": "^24.0.0",
+    "jest": "^30.0.0",
+    "mcps-logger": "^1.0.0",
+    "ts-jest": "^29.4.0",
     "typescript": "^5.8.3",
     "zod": "^3.25.57"
   },

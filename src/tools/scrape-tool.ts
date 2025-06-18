@@ -1,5 +1,5 @@
 import z from 'zod';
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp';
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { ScrapingMCPParams } from 'types';
 import { ScraperApiClient } from '../clients/scraper-api-client';
 import { NodeHtmlMarkdown } from 'node-html-markdown';

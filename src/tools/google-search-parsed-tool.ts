@@ -1,13 +1,28 @@
 import z from 'zod';
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp';
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { ScraperAPIParams, ScrapingMCPParams } from 'types';
 import { ScraperApiClient } from 'clients/scraper-api-client';
 import { SCRAPER_API_TARGETS } from '../constants';
 import { removeKeyFromNestedObject } from '../utils';
 
 export class GoogleSearchParsedTool {
-  static transformResponse = ({ obj }: { obj: object }) => {
-    removeKeyFromNestedObject({ obj, keyToRemove: 'images' });
+  static FIELDS_WITH_HIGH_CHAR_COUNT = [
+    'images',
+    'image_data',
+    'related_searches_urls',
+    'factoids',
+    'people_also_buy_from',
+    'what_people_are_saying',
+  ];
+
+  static transformAutoParsedResponse = ({ obj }: { obj: object }): string => {
+    for (const fieldToRemove of GoogleSearchParsedTool.FIELDS_WITH_HIGH_CHAR_COUNT) {
+      obj = removeKeyFromNestedObject({ obj, keyToRemove: fieldToRemove });
+    }
+
+    const text = JSON.stringify(obj);
+
+    return text;
   };
 
   static register = ({
@@ -41,13 +56,13 @@ export class GoogleSearchParsedTool {
 
         const { data } = await sapiClient.scrape<object>({ scrapingParams: params });
 
-        const object = this.transformResponse({ obj: data });
+        const text = this.transformAutoParsedResponse({ obj: data });
 
         return {
           content: [
             {
               type: 'text',
-              text: JSON.stringify(object),
+              text,
             },
           ],
         };

@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "module": "commonjs",
+    "module": "nodenext",
     "outDir": "./build",
     "baseUrl": "src",
     "strict": true,
     "sourceMap": true,
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noImplicitAny": false,
@@ -17,7 +17,8 @@
     "strictPropertyInitialization": false,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "isolatedModules": true
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "**/*.test.ts"]
 }

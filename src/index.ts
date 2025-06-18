@@ -4,6 +4,10 @@ import { exit } from 'process';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { ScraperAPIMCPServer } from './sapi-mcp-server';
 
+if (process.env.ENABLE_MCPS_LOGGER) {
+  import('mcps-logger/console');
+}
+
 const parseEnvsOrExit = (): Record<string, string> => {
   const envs = ['SCRAPER_API_USERNAME', 'SCRAPER_API_PASSWORD'];
 

@@ -4,7 +4,7 @@ export const removeKeyFromNestedObject = ({
 }: {
   obj: object;
   keyToRemove: string;
-}) => {
+}): object => {
   if (typeof obj !== 'object' || obj === null) {
     return obj;
   }
