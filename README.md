@@ -2,33 +2,36 @@
 
 [![smithery badge](https://smithery.ai/badge/@Decodo/decodo-mcp-server)](https://smithery.ai/server/@Decodo/decodo-mcp-server)
 
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=decodo-mcp&config=eyJjb21tYW5kIjoibm9kZSAvVXNlcnMveW91ci51c2VyL3Byb2plY3RzL2RlY29kby1tY3AvYnVpbGQvaW5kZXguanMiLCJlbnYiOnsiU0NSQVBFUl9BUElfVVNFUk5BTUUiOiJ5b3VyX3VzZXJuYW1lIiwiU0NSQVBFUl9BUElfUEFTU1dPUkQiOiJ5b3VyX3Bhc3N3b3JkIn19)
+This repo contains Decodo MCP server which enables MCP clients to interface with services offered by
+Decodo.
 
-This repo contains Decodo MCP server which enables MCP clients to interface with Decodo.
+## Quick start via Smithery (Recommended)
 
-## Installing via Smithery
+Visit `decodo-mcp-server` on [Smithery](https://smithery.ai/server/@Decodo/decodo-mcp-server),
+select your favourite MCP client and generate installation instructions.
 
-To install `decodo-mcp-server` for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@Decodo/decodo-mcp-server):
+![Smithery interface](img/smithery.png 'Smithery UI')
 
-```bash
-npx -y @smithery/cli install @Decodo/decodo-mcp-server --client claude
-```
+## Obtain Scraper API credentials
 
-## Setup (running MCP server locally)
+A Decodo Scraper API Web Advanced user is required - trial available on
+[dashboard](https://dashboard.decodo.com/).
 
-### Installing Manually
-Prerequisites:
+Once you have a Web Advanced plan activated, take a note of your generated username and password:
 
-- `node` >= `18.0`
-- A Decodo Scraper API Web Advanced user - trial available on
-  [dashboard](https://dashboard.decodo.com/).
-- An MCP client - can currently choose between:
-  - [Claude Desktop](https://claude.ai/download)
-  - [Cursor](https://www.cursor.com/)
+![Decodo dashboard](img/auth.png 'Decodo dashboard')
 
-1. Once you have a Web Advanced plan activated, take a note of your generated username and password:
+## Running MCP server locally (manual)
 
-![alt text](img/auth.png 'Title')
+<details>
+
+<summary>Running MCP server locally</summary>
+
+### Prerequisites:
+
+- Node.js >= `18.0`
+- An MCP client - popular choices are [Claude Desktop](https://claude.ai/download) and
+  [Cursor](https://www.cursor.com/)
 
 2. Clone this repo and run:
 
@@ -79,6 +82,8 @@ then update `claude_desktop_config.json` to look like this:
 See
 [Cursor documentation](https://docs.cursor.com/context/model-context-protocol#installing-mcp-servers)
 for how to install.
+
+</details>
 
 ## Tools
 
