@@ -1,0 +1,31 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'node',
+      args: ['build/index.js'],
+      env: {
+        SCRAPER_API_USERNAME: config.sapiUsername,
+        SCRAPER_API_PASSWORD: config.sapiPassword,
+      },
+    })
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - sapiUsername
+      - sapiPassword
+    properties:
+      sapiUsername:
+        type: string
+        description: Username for Decodo Scraper API
+      sapiPassword:
+        type: string
+        description: Password for Decodo Scraper API
+  exampleConfig:
+    sapiUsername: your_username
+    sapiPassword: your_password
