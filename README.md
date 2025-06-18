@@ -1,13 +1,22 @@
 # Decodo MCP Server
 
-<b> Work In Progress - expect new features soon! </b><br>
+[![smithery badge](https://smithery.ai/badge/@Decodo/decodo-mcp-server)](https://smithery.ai/server/@Decodo/decodo-mcp-server)
 
 [![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/install-mcp?name=decodo-mcp&config=eyJjb21tYW5kIjoibm9kZSAvVXNlcnMveW91ci51c2VyL3Byb2plY3RzL2RlY29kby1tY3AvYnVpbGQvaW5kZXguanMiLCJlbnYiOnsiU0NSQVBFUl9BUElfVVNFUk5BTUUiOiJ5b3VyX3VzZXJuYW1lIiwiU0NSQVBFUl9BUElfUEFTU1dPUkQiOiJ5b3VyX3Bhc3N3b3JkIn19)
 
 This repo contains Decodo MCP server which enables MCP clients to interface with Decodo.
 
+## Installing via Smithery
+
+To install `decodo-mcp-server` for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@Decodo/decodo-mcp-server):
+
+```bash
+npx -y @smithery/cli install @Decodo/decodo-mcp-server --client claude
+```
+
 ## Setup (running MCP server locally)
 
+### Installing Manually
 Prerequisites:
 
 - `node` >= `18.0`
