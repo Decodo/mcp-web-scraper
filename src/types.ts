@@ -6,6 +6,8 @@ export type ScrapingMCPParams = {
   geo?: string;
   locale?: string;
   jsRender?: boolean;
+  tokenLimit?: number;
+  fullResponse?: boolean;
 };
 
 export type ScraperAPIParams = {

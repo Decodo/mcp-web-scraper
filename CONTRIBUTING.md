@@ -11,4 +11,4 @@ enable the logger:
 
 3. Run `npx mcps-logger` in a new terminal tab.
 
-Now logs like `console.log(test)` should show up in the new terminal tab.
+Now logs like `console.log("test")` should show up in the new terminal tab.

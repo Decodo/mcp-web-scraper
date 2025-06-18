@@ -98,11 +98,13 @@ The server exposes the following tools:
 
 The following parameters are inferred from user prompts:
 
-| Parameter  | Description                                        |
-| ---------- | -------------------------------------------------- |
-| `jsRender` | Renders target URL in a headless browser.          |
-| `geo`      | Sets the country from which request will originate |
-| `locale`   | Sets the locale of the request.                    |
+| Parameter      | Description                                                                                          |
+| -------------- | ---------------------------------------------------------------------------------------------------- |
+| `jsRender`     | Renders target URL in a headless browser.                                                            |
+| `geo`          | Sets the country from which request will originate.                                                  |
+| `locale`       | Sets the locale of the request.                                                                      |
+| `tokenLimit`   | Truncates the response content up to this limit. Useful if the context window is small.              |
+| `fullResponse` | Skips automatic truncation and returns full content. If context window is small, may throw warnings. |
 
 ## Examples
 
@@ -118,4 +120,19 @@ This prompt will say that peacock.com is geo-restricted. To come around the geo-
 
 ```
 Scrape peacock.com from a US ip address and tell me the pricing
+```
+
+### Limiting number of response tokens
+
+If your agent has a small context window, the content returned from scraping will be automatically
+truncated, in order to avoid context-overflow. You can increase the number of tokens returned:
+
+```
+Scrape hacker news, return 50k tokens
+```
+
+If your agent has a big context window, tell it to return `full content`:
+
+```
+Scrape hacker news, return full content
 ```

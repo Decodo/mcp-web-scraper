@@ -4,6 +4,7 @@ import { ScraperAPIParams, ScrapingMCPParams } from 'types';
 import { ScraperApiClient } from 'clients/scraper-api-client';
 import { SCRAPER_API_TARGETS } from '../constants';
 import { removeKeyFromNestedObject } from '../utils';
+import { zodGeo, zodLocale, zodJsRender } from '../zod/zod-types';
 
 export class GoogleSearchParsedTool {
   static FIELDS_WITH_HIGH_CHAR_COUNT = [
@@ -32,20 +33,16 @@ export class GoogleSearchParsedTool {
     server: McpServer;
     sapiClient: ScraperApiClient;
   }) => {
-    server.tool(
+    server.registerTool(
       'google_search_parsed',
-      'Scrape Google Search results with automatic parsing',
       {
-        query: z.string().describe('search query'),
-        geo: z
-          .string()
-          .describe('Geolocation of the desired request, expressed as a country name')
-          .optional(),
-        locale: z.string().describe('Locale of the desired request').optional(),
-        jsRender: z
-          .boolean()
-          .describe('Should the request be opened in a headless browser, false by default')
-          .optional(),
+        description: 'Scrape Google Search results with automatic parsing',
+        inputSchema: {
+          query: z.string().describe('Search query'),
+          geo: zodGeo,
+          locale: zodLocale,
+          jsRender: zodJsRender,
+        },
       },
       async (scrapingParams: ScrapingMCPParams) => {
         const params = {
