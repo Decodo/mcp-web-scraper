@@ -33,7 +33,10 @@ export class ScraperApiClient {
     const res = await axios.request<ScraperApiResponseData<T>>({
       url: 'https://scraper-api.decodo.com/v2/scrape',
       method: 'POST',
-      headers: { authorization: `Basic ${this.auth}` },
+      headers: {
+        authorization: `Basic ${this.auth}`,
+        'x-integration': 'mcp',
+      },
       data: {
         ...transformedParams,
       },
