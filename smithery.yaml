@@ -9,23 +9,23 @@ startCommand:
       command: 'node',
       args: ['build/index.js'],
       env: {
-        SCRAPER_API_USERNAME: config.scraperApiUsername,
-        SCRAPER_API_PASSWORD: config.scraperApiPassword,
+        SCRAPER_API_USERNAME: config.scraperApi01Username,
+        SCRAPER_API_PASSWORD: config.scraperApi02Password,
       },
     })
   configSchema:
     # JSON Schema defining the configuration options for the MCP.
     type: object
     required:
-      - scraperApiUsername
-      - scraperApiPassword
+      - scraperApi01Username
+      - scraperApi02Password
     properties:
-      scraperApiUsername:
+      scraperApi01Username:
         type: string
         description: Username for Decodo Scraper API
-      scraperApiPassword:
+      scraperApi02Password:
         type: string
         description: Password for Decodo Scraper API
   exampleConfig:
-    scraperApiUsername: your_username
-    scraperApiPassword: your_password
+    scraperApi01Username: your_username
+    scraperApi02Password: your_password
