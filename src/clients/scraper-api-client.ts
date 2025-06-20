@@ -1,5 +1,4 @@
 import axios, { AxiosResponse } from 'axios';
-import { NodeHtmlMarkdown } from 'node-html-markdown';
 import { ScraperApiResponseData } from './types';
 import { ScraperAPIParams, ScrapingMCPParams } from 'types';
 
