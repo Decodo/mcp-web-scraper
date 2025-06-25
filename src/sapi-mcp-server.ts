@@ -1,7 +1,7 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { ScraperApiClient } from './clients/scraper-api-client';
-import { ScrapeTool } from './tools/scrape-tool';
+import { ScrapeAsMarkdownTool } from './tools/scrape-as-markdown-tool';
 import { GoogleSearchParsedTool } from './tools/google-search-parsed-tool';
 import { AmazonSearchParsedTool } from './tools/amazon-search-parsed-tool';
 
@@ -35,7 +35,7 @@ export class ScraperAPIMCPServer {
 
   registerTools() {
     // scrape
-    ScrapeTool.register({ server: this.server, sapiClient: this.sapiClient });
+    ScrapeAsMarkdownTool.register({ server: this.server, sapiClient: this.sapiClient });
 
     // targets
     GoogleSearchParsedTool.register({ server: this.server, sapiClient: this.sapiClient });
