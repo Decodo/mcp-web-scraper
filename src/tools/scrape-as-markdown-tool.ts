@@ -5,7 +5,7 @@ import { ScraperApiClient } from '../clients/scraper-api-client';
 import { NodeHtmlMarkdown } from 'node-html-markdown';
 import { zodFullResponse, zodGeo, zodJsRender, zodLocale, zodTokenLimit } from '../zod/zod-types';
 
-export class ScrapeTool {
+export class ScrapeAsMarkdownTool {
   static LARGE_CONTENT_SYMBOL_COUNT = 10_000;
 
   static isResponseOverLimit = (content: string) => {
@@ -61,8 +61,8 @@ export class ScrapeTool {
     sapiClient: ScraperApiClient;
   }) => {
     server.tool(
-      'scrape',
-      'Scrape the contents of a website',
+      'scrape_as_markdown',
+      'Scrape the contents of a website and return Markdown-formatted results',
       {
         url: z.string().describe('URL to scrape'),
         geo: zodGeo,
@@ -85,7 +85,7 @@ export class ScrapeTool {
             {
               type: 'text',
               text: isTruncated
-                ? `The website content is over ${this.LARGE_CONTENT_SYMBOL_COUNT} symbols, therefore, I have truncated the content. If you wish to obtain the full response, just say "full response". Alternatively, you can tell me a specific token limit.`
+                ? `The website content is over ${this.LARGE_CONTENT_SYMBOL_COUNT} symbols, therefore, the content has been truncated. If you wish to obtain the full response, just say "full response". Alternatively, you say a specific token limit in the prompt.`
                 : 'Full website content retrieved.',
             },
             {

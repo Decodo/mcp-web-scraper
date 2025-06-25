@@ -106,11 +106,11 @@ For installation instructions, see the
 
 The server exposes the following tools:
 
-| Tool                   | Description                                                          | Example prompt                                                   |
-| ---------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `scrape`               | Scrapes any target URL, expects a URL to be given via prompt.        | Scrape peacock.com from a US IP address and tell me the pricing. |
-| `google_search_parsed` | Scrapes Google Search for a given query, and returns parsed results. | Scrape Google Search for shoes and tell me the top position.     |
-| `amazon_search_parsed` | Scrapes Amazon Search for a given query, and returns parsed results. | Scrape Amazon Search for toothbrushes                            |
+| Tool                   | Description                                                                                | Example prompt                                                   |
+| ---------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| `scrape_as_markdown`   | Scrapes any target URL, expects a URL to be given via prompt. Returns results in Markdown. | Scrape peacock.com from a US IP address and tell me the pricing. |
+| `google_search_parsed` | Scrapes Google Search for a given query, and returns parsed results.                       | Scrape Google Search for shoes and tell me the top position.     |
+| `amazon_search_parsed` | Scrapes Amazon Search for a given query, and returns parsed results.                       | Scrape Amazon Search for toothbrushes                            |
 
 ## Parameters
 
