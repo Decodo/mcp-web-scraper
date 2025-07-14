@@ -55,6 +55,7 @@ git clone https://github.com/Decodo/decodo-mcp-server
 2. Run the following commands in the terminal:
 
 ```
+cd decodo-mcp-server
 npm install
 npm run build
 ```
