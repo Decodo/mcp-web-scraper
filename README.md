@@ -110,7 +110,9 @@ The server exposes the following tools:
 | ---------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
 | `scrape_as_markdown`   | Scrapes any target URL, expects a URL to be given via prompt. Returns results in Markdown. | Scrape peacock.com from a US IP address and tell me the pricing. |
 | `google_search_parsed` | Scrapes Google Search for a given query, and returns parsed results.                       | Scrape Google Search for shoes and tell me the top position.     |
-| `amazon_search_parsed` | Scrapes Amazon Search for a given query, and returns parsed results.                       | Scrape Amazon Search for toothbrushes                            |
+| `amazon_search_parsed` | Scrapes Amazon Search for a given query, and returns parsed results.                       | Scrape Amazon Search for toothbrushes.                           |
+| `reddit_post`          | Scrapes a specific Reddit post for a given query, and returns parsed results.              | Scrape the following Reddit post: https://www.reddit.com/r/horseracing/comments/1nsrn3/                |
+| `reddit_subreddit`     | Scrapes a specific Reddit subreddit for a given query, and returns parsed results.         | Scrape the top 5 posts on r/Python this week.                     |
 
 ## Parameters
 
