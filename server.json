@@ -1,0 +1,44 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-16/server.schema.json",
+  "name": "io.github.Decodo/decodo-mcp-server",
+  "description": "Enable your AI agents to scrape and parse web content dynamically, including geo-restricted sites",
+  "status": "active",
+  "repository": {
+    "url": "https://github.com/Decodo/decodo-mcp-server",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "@decodo/mcp-server",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "SCRAPER_API_USERNAME",
+          "description": "Decodo Web Advanced API username",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": false
+        },
+        {
+          "name": "SCRAPER_API_PASSWORD",
+          "description": "Decodo Web Advanced API password",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://server.smithery.ai/@Decodo/decodo-mcp-server/mcp"
+    }
+  ]
+}
