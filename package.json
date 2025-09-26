@@ -1,12 +1,12 @@
 {
   "name": "@decodo/mcp-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "bin": {
     "decodo-mcp": "./build/index.js"
   },
   "main": "index.js",
-  "mcpName": "io.github.Decodo/decodo-mcp-server",
+  "mcpName": "io.github.Decodo/mcp-web-scraper",
   "scripts": {
     "build": "tsc && chmod 755 build/index.js",
     "dev": "pnpm run build && mcp-inspector",
