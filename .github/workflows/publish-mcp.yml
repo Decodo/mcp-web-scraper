@@ -30,10 +30,11 @@ jobs:
       - name: Build package
         run: npm run build --if-present
 
-      - name: Publish to npm
-        run: npm publish
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # NPM classic tokes keeps requiring 2FA on pipeline, removing temporarily
+      # - name: Publish to npm
+      #   run: npm publish
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install MCP Publisher
         run: |
