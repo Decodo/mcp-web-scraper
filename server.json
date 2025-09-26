@@ -7,7 +7,7 @@
     "url": "https://github.com/Decodo/decodo-mcp-server",
     "source": "github"
   },
-  "version": "1.0.0",
+  "version": "0.1.0",
   "packages": [
     {
       "registryType": "npm",
@@ -33,12 +33,6 @@
           "isSecret": true
         }
       ]
-    }
-  ],
-  "remotes": [
-    {
-      "type": "streamable-http",
-      "url": "https://server.smithery.ai/@Decodo/decodo-mcp-server/mcp"
     }
   ]
 }
