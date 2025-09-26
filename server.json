@@ -7,7 +7,7 @@
     "url": "https://github.com/Decodo/decodo-mcp-server",
     "source": "github"
   },
-  "version": "0.1.0",
+  "version": "1.0.0",
   "packages": [
     {
       "registryType": "npm",
