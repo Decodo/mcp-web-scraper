@@ -13,7 +13,8 @@ const parseEnvsOrExit = (): Record<string, string> => {
 
   for (const envKey of envs) {
     if (!process.env[envKey]) {
-      exit(`env ${envKey} missing`);
+      console.error(`env ${envKey} missing`);
+      process.exit(1);
     }
   }
 

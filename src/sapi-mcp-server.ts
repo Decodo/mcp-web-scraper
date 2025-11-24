@@ -8,6 +8,7 @@ import {
   RedditSubredditTool,
   ScrapeAsMarkdownTool,
 } from './tools';
+import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
 
 export class ScraperAPIMCPServer {
   server: McpServer;
@@ -33,7 +34,7 @@ export class ScraperAPIMCPServer {
     this.registerResources();
   }
 
-  connect(transport: StdioServerTransport) {
+  connect(transport: StdioServerTransport | StreamableHTTPServerTransport) {
     this.server.connect(transport);
   }
 
