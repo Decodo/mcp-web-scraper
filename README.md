@@ -2,10 +2,11 @@
 
 [![smithery badge](https://smithery.ai/badge/@Decodo/decodo-mcp-server)](https://smithery.ai/server/@Decodo/decodo-mcp-server)
 
+[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=Decodo&config=eyJ1cmwiOiJodHRwczovL21jcC5kZWNvZG8uY29tL21jcCIsImhlYWRlcnMiOnsiQXV0aG9yaXphdGlvbiI6IkJhc2ljIDx3ZWJfYWR2YW5jZWRfdG9rZW4%2BIn19)
+[![](https://dcbadge.limes.pink/api/server/https://discord.gg/Ja8dqKgvbZ)](https://discord.gg/Ja8dqKgvbZ)
+
 <p align="center">
 <a href="https://dashboard.decodo.com/register?page=scrapers%2Fpricing&utm_source=github.com&utm_medium=social&utm_campaign=scraper_api_github"><img src="https://github.com/user-attachments/assets/13b08523-32b0-4c85-8e99-580d7c2a9055"></a>
-
-[![](https://dcbadge.vercel.app/api/server/Ja8dqKgvbZ)](https://discord.gg/Ja8dqKgvbZ)
 
 This repository provides a Model Context Protocol (MCP) server that connects LLMs and applications
 to Decodo's platform. The server facilitates integration between MCP-compatible clients and Decodo's
@@ -20,23 +21,31 @@ services, streamlining access to our tools and capabilities.
 - Simple integration. Seamless setup with popular MCP clients like Claude Desktop, Cursor, and
   Windsurf.
 
-## Quick start via Smithery (Recommended)
+## Quick start
 
-Visit the `decodo-mcp-server` page on
-[Smithery](https://smithery.ai/server/@Decodo/decodo-mcp-server), select your preferred MCP client
-and generate installation instructions.
+1. Start a Decodo Web Advanced plan (free trials available) via
+   [dashboard](https://dashboard.decodo.com/scrapers/pricing).
 
-![Smithery interface](img/smithery.png 'Smithery UI')
+2. Copy the auto-generated basic authentication token in the Web Advanced page.
 
-## Obtain Web Scraping API credentials
+![Decodo dashboard](img/auth_token.png 'Decodo dashboard')
 
-You'll need the Decodo Advanced Web Scraping API credentials, which you can get by starting a free
-trial on the [dashboard](https://dashboard.decodo.com/). Once you have a plan activated, take a note
-of your generated username and password:
+3. Open up your favourite MCP client and add the following configuration:
 
-![Decodo dashboard](img/auth.png 'Decodo dashboard')
+```
+{
+  "Decodo": {
+    "url": "https://mcp.decodo.com/mcp",
+    "headers": {
+      "Authorization": "Basic <web_advanced_token>"
+    }
+  }
+}
+```
 
 ## Running the MCP server locally (manual)
+
+<details>
 
 ### Prerequisites
 
@@ -76,43 +85,19 @@ this:
 
 4. Update your MCP client with the server information:
 
-### Claude Desktop
-
-[Follow the guide here](https://modelcontextprotocol.io/quickstart/user) to find the setup file,
-then update `claude_desktop_config.json` to look like this:
-
-```
-{
-  "mcpServers": {
-    "decodo-mcp": {
-      "command": "node",
-      "args": ["/Users/your.user/projects/decodo-mcp/build/index.js"],
-      "env": {
-        "SCRAPER_API_USERNAME": "your_username",
-        "SCRAPER_API_PASSWORD": "your_password"
-      }
-    }
-  }
-}
-
-```
-
-### Cursor
-
-For installation instructions, see the
-[Cursor documentation](https://docs.cursor.com/context/model-context-protocol#installing-mcp-servers).
+</details>
 
 ## Tools
 
 The server exposes the following tools:
 
-| Tool                   | Description                                                                                | Example prompt                                                   |
-| ---------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
-| `scrape_as_markdown`   | Scrapes any target URL, expects a URL to be given via prompt. Returns results in Markdown. | Scrape peacock.com from a US IP address and tell me the pricing. |
-| `google_search_parsed` | Scrapes Google Search for a given query, and returns parsed results.                       | Scrape Google Search for shoes and tell me the top position.     |
-| `amazon_search_parsed` | Scrapes Amazon Search for a given query, and returns parsed results.                       | Scrape Amazon Search for toothbrushes.                           |
-| `reddit_post`          | Scrapes a specific Reddit post for a given query, and returns parsed results.              | Scrape the following Reddit post: https://www.reddit.com/r/horseracing/comments/1nsrn3/                |
-| `reddit_subreddit`     | Scrapes a specific Reddit subreddit for a given query, and returns parsed results.         | Scrape the top 5 posts on r/Python this week.                     |
+| Tool                   | Description                                                                                | Example prompt                                                                          |
+| ---------------------- | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
+| `scrape_as_markdown`   | Scrapes any target URL, expects a URL to be given via prompt. Returns results in Markdown. | Scrape peacock.com from a US IP address and tell me the pricing.                        |
+| `google_search_parsed` | Scrapes Google Search for a given query, and returns parsed results.                       | Scrape Google Search for shoes and tell me the top position.                            |
+| `amazon_search_parsed` | Scrapes Amazon Search for a given query, and returns parsed results.                       | Scrape Amazon Search for toothbrushes.                                                  |
+| `reddit_post`          | Scrapes a specific Reddit post for a given query, and returns parsed results.              | Scrape the following Reddit post: https://www.reddit.com/r/horseracing/comments/1nsrn3/ |
+| `reddit_subreddit`     | Scrapes a specific Reddit subreddit for a given query, and returns parsed results.         | Scrape the top 5 posts on r/Python this week.                                           |
 
 ## Parameters
 
