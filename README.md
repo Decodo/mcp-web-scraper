@@ -1,9 +1,9 @@
 # Decodo MCP Server
 
+[![](https://dcbadge.limes.pink/api/server/https://discord.gg/Ja8dqKgvbZ)](https://discord.gg/Ja8dqKgvbZ)
+[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=Decodo&config=eyJ1cmwiOiJodHRwczovL21jcC5kZWNvZG8uY29tL21jcCIsImhlYWRlcnMiOnsiQXV0aG9yaXphdGlvbiI6IkJhc2ljIDx3ZWJfYWR2YW5jZWRfdG9rZW4%2BIn19)
 [![smithery badge](https://smithery.ai/badge/@Decodo/decodo-mcp-server)](https://smithery.ai/server/@Decodo/decodo-mcp-server)
 
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=Decodo&config=eyJ1cmwiOiJodHRwczovL21jcC5kZWNvZG8uY29tL21jcCIsImhlYWRlcnMiOnsiQXV0aG9yaXphdGlvbiI6IkJhc2ljIDx3ZWJfYWR2YW5jZWRfdG9rZW4%2BIn19)
-[![](https://dcbadge.limes.pink/api/server/https://discord.gg/Ja8dqKgvbZ)](https://discord.gg/Ja8dqKgvbZ)
 
 <p align="center">
 <a href="https://dashboard.decodo.com/register?page=scrapers%2Fpricing&utm_source=github.com&utm_medium=social&utm_campaign=scraper_api_github"><img src="https://github.com/user-attachments/assets/13b08523-32b0-4c85-8e99-580d7c2a9055"></a>
@@ -21,16 +21,15 @@ services, streamlining access to our tools and capabilities.
 - Simple integration. Seamless setup with popular MCP clients like Claude Desktop, Cursor, and
   Windsurf.
 
-## Quick start
+## Running with an MCP client
 
-1. Start a Decodo Web Advanced plan (free trials available) via
-   [dashboard](https://dashboard.decodo.com/scrapers/pricing).
+1. Start a [Decodo integrations plan](https://decodo.com/scraping/web) with 2.5k free requests.
 
 2. Copy the auto-generated basic authentication token in the Web Advanced page.
 
 ![Decodo dashboard](img/auth_token.png 'Decodo dashboard')
 
-3. Open up your favourite MCP client and add the following configuration:
+3. Open your preferred MCP client and add the following configuration:
 
 ```
 {
@@ -43,7 +42,7 @@ services, streamlining access to our tools and capabilities.
 }
 ```
 
-## Running the MCP server locally (manual)
+## Running the MCP server locally
 
 <details>
 
