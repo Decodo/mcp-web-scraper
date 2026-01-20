@@ -21,27 +21,6 @@ services, streamlining access to our tools and capabilities.
 - Simple integration. Seamless setup with popular MCP clients like Claude Desktop, Cursor, and
   Windsurf.
 
-## Running with an MCP client
-
-1. Start a [Decodo integrations plan](https://decodo.com/scraping/web) with 2.5k free requests.
-
-2. Copy the auto-generated basic authentication token in the Web Advanced page.
-
-![Decodo dashboard](img/auth_token.png 'Decodo dashboard')
-
-3. Open your preferred MCP client and add the following configuration:
-
-```
-{
-  "Decodo": {
-    "url": "https://mcp.decodo.com/mcp",
-    "headers": {
-      "Authorization": "Basic <web_advanced_token>"
-    }
-  }
-}
-```
-
 ## Running the MCP server locally
 
 <details>
