@@ -81,15 +81,14 @@ scraping infrastructure from scratch. Common scenarios:
 1. **Create a free account** at [dashboard.decodo.com](https://dashboard.decodo.com/) – up to 2K
    free requests, no credit card required.
 2. **Get your API key.** Obtain a Web Scraping API basic authentication token from the dashboard.
-3. **Configure the MCP server** in your AI client (see configuration examples below).
-4. **Connect your AI client.** Works with Claude Code, Cursor, Windsurf, and other MCP-compatible
-   tools.
+3. **Download Node.js 18+** from https://nodejs.org.
+4. **Get MCP client** like Claude Desktop, Curson, Windsurf or other MCP-compatible
+   tools..
+5. **Configure the MCP server** in your AI client (see configuration examples below).
 
-Your agent can now scrape and retrieve live web data.
+## Connecting to [Decodo's MCP server](https://mcp.decodo.com/mcp) 
 
-## Connecting to [Decodo's MCP server](https://mcp.decodo.com/mcp) (Claude Code, Cursor)
-
-1. Open your preferred MCP client and add the following configuration:
+Open your preferred MCP client and add the following configuration (see examples for Claude Code, Cursor, Windsurf bellow):
 
 ```
 {
@@ -104,7 +103,9 @@ Your agent can now scrape and retrieve live web data.
 }
 ```
 
-## Claude Desktop
+### Claude Desktop
+1. Open Claude Desktop → Settings → Developer → Edit Config.
+2. Add to claude_desktop_config.json:
 
 ```
 {
@@ -120,8 +121,30 @@ Your agent can now scrape and retrieve live web data.
   }
 }
 ```
+3. Save and restart Claude Desktop.
 
-## Running the MCP server locally
+### Cursor
+ 1. Open Settings  → MCP.
+ 2. Click Add a new global MCP server (opens mcp.json).
+ 3. Add the same configuration as above.
+ 4. Save — look for a green status indicator next to Decodo.
+
+### Windsurf
+ 1. Open Settings → Windsurf Settings.
+ 2. Scroll to Cascade → Add custom server + (opens mcp_config.json).
+ 3. Add the same configuration as above.
+ 4. Save and restart Windsurf.
+
+## Test your setup
+Once connected, try this prompt in your client:
+
+  ▎ "Scrape the titles of the top 5 articles from Hacker News"
+
+You should get a structured list back within seconds. If you see an auth error, double-check your token from the dashboard.
+## Optional: enable specific toolsets
+  
+
+# Running the MCP server locally
 
 <details>
 
