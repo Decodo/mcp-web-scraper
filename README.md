@@ -93,7 +93,7 @@ Open your preferred MCP client and add the following configuration (see examples
 ```
 {
   "mcpServers": {
-    "Decodo MCP Server": {
+    "Decodo": {
       "url": "https://mcp.decodo.com/mcp",
       "headers": {
         "Authorization": "Basic <basic_auth_token>"
@@ -110,7 +110,7 @@ Open your preferred MCP client and add the following configuration (see examples
 ```
 {
   "mcpServers": {
-    "Decodo MCP Server": {
+    "Decodo": {
       "command": "npx",
       "args": ["-y", "@decodo/mcp-server"],
       "env": {
