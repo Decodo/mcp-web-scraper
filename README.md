@@ -94,7 +94,7 @@ Your agent can now scrape and retrieve live web data.
 ```
 {
   "mcpServers": {
-    "Decodo MCP Server": {
+    "decodo": {
       "url": "https://mcp.decodo.com/mcp",
       "headers": {
         "Authorization": "Basic <basic_auth_token>"
@@ -109,7 +109,7 @@ Your agent can now scrape and retrieve live web data.
 ```
 {
   "mcpServers": {
-    "Decodo MCP Server": {
+    "decodo": {
       "command": "npx",
       "args": ["-y", "@decodo/mcp-server"],
       "env": {
