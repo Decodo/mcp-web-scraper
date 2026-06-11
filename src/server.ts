@@ -1,11 +1,14 @@
 import 'dotenv/config';
+import cors from 'cors';
 import express from 'express';
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js';
+import { corsOptions } from './server/cors';
 import { ScraperAPIHttpServer } from './server/sapi-http-server';
 import { resolveToolsets } from './utils';
 
 const app = express();
 
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get('/mcp', (_req, res) => {
