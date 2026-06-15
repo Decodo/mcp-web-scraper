@@ -87,7 +87,9 @@ describe('ProgressNotifier', () => {
         },
       });
 
-      if (timeout) clearTimeout(timeout);
+      if (timeout) {
+        clearTimeout(timeout);
+      }
       jest.useRealTimers();
     });
 
