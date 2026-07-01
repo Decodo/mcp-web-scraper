@@ -317,9 +317,30 @@ If your agent has a big context window, tell it to return `full content`:
 Scrape hacker news, return full content.
 ```
 
+## Use with Decodo agent skills
+
+This server gives your agent the scraping *tools*. [`Decodo/agent-skills`](https://github.com/Decodo/agent-skills)
+teaches it **when** to reach for them, **which** surface to use, and **how** to call it — so the agent
+picks the right tool and parameters on its own instead of guessing.
+
+The skills route across the `decodo` CLI, this hosted MCP server, and the raw HTTP API, and fall back
+to the MCP server automatically when no shell is available. Pairing the two gives your agent both the
+execution layer (this server) and the decision layer (the skills) in a single setup.
+
+**Quick start** (Claude Code):
+
+```text
+/plugin marketplace add Decodo/agent-skills
+/plugin install decodo@decodo-skills
+```
+
+See the [agent-skills README](https://github.com/Decodo/agent-skills#readme) for manual install and
+other agents (Cursor, Codex, Gemini CLI, Windsurf).
+
 ## Related repositories
 
 [Web Scraping API](https://github.com/Decodo/Web-Scraping-API),
+[Decodo agent skills](https://github.com/Decodo/agent-skills),
 [Decodo OpenClaw skill](https://github.com/Decodo/decodo-openclaw-skill)
 
 ## Try it
