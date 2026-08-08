@@ -83,7 +83,7 @@ scraping infrastructure from scratch. Common scenarios:
 2. **Get your API key.** Obtain a Web Scraping API basic authentication token from the dashboard.
 3. **Download Node.js 18+** from https://nodejs.org.
 4. **Get MCP client** like Claude Desktop, Curson, Windsurf or other MCP-compatible
-   tools..
+   tools.
 5. **Configure the MCP server** in your AI client (see configuration examples below).
 
 ## Connecting to [Decodo's MCP server](https://mcp.decodo.com/mcp) 
@@ -165,7 +165,7 @@ git clone https://github.com/Decodo/mcp-server
 2. Run the following commands in the terminal:
 
 ```
-cd decodo-mcp-server
+cd mcp-server
 npm install
 npm run build
 ```
