@@ -82,8 +82,8 @@ scraping infrastructure from scratch. Common scenarios:
    free requests, no credit card required.
 2. **Get your API key.** Obtain a Web Scraping API basic authentication token from the dashboard.
 3. **Download Node.js 18+** from https://nodejs.org.
-4. **Get MCP client** like Claude Desktop, Curson, Windsurf or other MCP-compatible
-   tools..
+4. **Get MCP client** like Claude Desktop, Cursor, Windsurf or other MCP-compatible
+   tools.
 5. **Configure the MCP server** in your AI client (see configuration examples below).
 
 ## Connecting to [Decodo's MCP server](https://mcp.decodo.com/mcp) 
